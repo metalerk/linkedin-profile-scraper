@@ -26,8 +26,8 @@ class LinkedinController(SeleniumHelper):
 	CONTAINER['PUBLIC'] = '#profile'
 	SECTIONS['PUBLIC'] = {}
 	FIELDS['PUBLIC'] = {}
-	SECTIONS['PUBLIC']['NAME'] = {'selector':'#name', 'type':'text', 'quantity':'single'}
-	SECTIONS['PUBLIC']['IMAGE'] = {'selector':'.profile-picture img', 'type':'attr', 'attr':'src', 'quantity':'single'}
+	SECTIONS['PUBLIC']['NAME'] = {'selector':'#pv-top-card-section__name Sans-26px-black-85% mb1', 'type':'text', 'quantity':'single'}
+	SECTIONS['PUBLIC']['IMAGE'] = {'selector':'.profile-photo-edit__edit-btn', 'type':'attr', 'attr':'src', 'quantity':'single'}
 	SECTIONS['PUBLIC']['CONNECTIONS'] = {'selector':'.member-connections', 'type':'text', 'quantity':'single'}
 	SECTIONS['PUBLIC']['TITLE'] = {'selector':'p.title', 'type':'text', 'quantity':'single'}
 	SECTIONS['PUBLIC']['LOCATION'] = {'selector':'.locality', 'type':'text', 'quantity':'single'}
@@ -488,3 +488,4 @@ class LinkedinController(SeleniumHelper):
 		else:
 			self.driver = webdriver.PhantomJS()
 		self.driver.set_page_load_timeout(self.TIMEOUT)
+		self.login()
